@@ -17,7 +17,7 @@ public class GUIDriver extends Application  {
 
     @Override
     public void start(Stage stage) {
-        stage.setTitle("Hello");
+        stage.setTitle("Cybersecurity Encryption and Decryption");
         Label plainLabel = new Label("Enter Plain Text-String to Encrypt: ");
         TextField plainTextField = new TextField();
         plainTextField.setPrefWidth(500);
