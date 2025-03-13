@@ -18,24 +18,24 @@ public class GUIDriver extends Application  {
     @Override
     public void start(Stage stage) {
         stage.setTitle("Hello");
-        Label plainLabel = new Label("Plain Text: ");
+        Label plainLabel = new Label("Enter Plain Text-String to Encrypt: ");
         TextField plainTextField = new TextField();
         plainTextField.setPrefWidth(500);
 
-        Label plainLabel1 = new Label("Encrypted: ");
+        Label plainLabel1 = new Label("Encrypted String: ");
         TextField plainTextField1 = new TextField();
         plainTextField1.setPrefWidth(500);
-        Label plainLabel2 = new Label("Decrypted");
+        Label plainLabel2 = new Label("Decrypted String: ");
         TextField plainTextField2 = new TextField();
         plainTextField2.setPrefWidth(500);
-        Label plainLabel3 = new Label("Key: ");
+        Label plainLabel3 = new Label(" Cipher Key: ");
         TextField plainTextField3 = new TextField();
         plainTextField3.setPrefWidth(500);
         Label plainLabel4 = new Label("Bellaso Key");
         TextField plainTextField4 = new TextField();
         plainTextField4.setPrefWidth(500);
-        Button button1 = new Button("Encrypt");
-        Button button2 = new Button("Decrypt");
+        Button button1 = new Button("Encrypt a string");
+        Button button2 = new Button("Decrypt a string");
         Button button3 = new Button("Clear");
         Button button4 = new Button("Exit");
         // Grid - Scene
@@ -72,10 +72,10 @@ public class GUIDriver extends Application  {
         ToggleGroup encryptionToggleGroup = new ToggleGroup();
         caesarRadioButton.setToggleGroup(encryptionToggleGroup);
         bellasoRadioButton.setToggleGroup(encryptionToggleGroup);
+        caesarRadioButton.setSelected(true); // default this radio will be chosen
 
-// Add the RadioButtons to your layout (e.g., VBox or HBox)
-        VBox radioButtonBox = new VBox(10, caesarRadioButton, bellasoRadioButton);
-        grid.add(radioButtonBox, 0, 7, 2, 1); // Add VBox to GridPane at row 7
+        grid.add(caesarRadioButton,0,7);
+        grid.add(bellasoRadioButton,1,7);
 
 
 
@@ -141,7 +141,7 @@ public class GUIDriver extends Application  {
 
         // button exit:
         button4.setOnAction(e->{
-            Platform.exit(); // thoat chuong trinh
+            Platform.exit(); //
         });
 
         Scene scene = new Scene(grid,300,500);
